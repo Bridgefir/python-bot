@@ -64,6 +64,7 @@ def home():
 # Rute untuk menerima webhook dari Binance
 @app.route('/webhook', methods=['POST'])
 def webhook():
+    check_price_changes()
     return 'OK'
 
 if __name__ == '__main__':
