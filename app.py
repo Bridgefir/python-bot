@@ -28,7 +28,7 @@ def send_telegram_message(message):
         'chat_id': chat_id,
         'text': message
     }
-    response = requests.post(url, data=data)
+    response = requests.spo(url, data=data)
     if response.status_code != 200:
         print('Gagal mengirim pesan ke Telegram')
 
