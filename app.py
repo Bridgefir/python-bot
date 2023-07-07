@@ -7,7 +7,6 @@ from apscheduler.schedulers.background import BackgroundScheduler
 
 app = Flask(__name__)
 
-
 api_key = os.getenv("API_KEY")
 api_secret = os.getenv("API_SECRET")
 client = Client(api_key, api_secret)
@@ -72,4 +71,5 @@ if __name__ == '__main__':
     scheduler.add_job(func=check_price_changes, trigger='interval', seconds=60)
     scheduler.start()
 
+    print("Flask app is running...")
     app.run()
